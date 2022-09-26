@@ -5,4 +5,5 @@ class Expense < ApplicationRecord
   has_many :groups, :through => :expense_groups
 
   validates :name, presence: true
+  validates :amount, presence: true
 end
