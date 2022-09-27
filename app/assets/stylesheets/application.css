@@ -24,10 +24,15 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  text-decoration: none;
   color: var(--text-color);
  }
  a, button, i, input[type=submit]{
   cursor: pointer;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ }
+ a:hover, button:hover, i:hover, input[type=submit]:hover {
+  opacity: 0.6;
  }
 .d-none {
   display: none;
@@ -39,7 +44,7 @@
    margin: 0 auto;
    background-color: var(--light);
  }
- .header-links > a {
+header > a,.header-links > a{
   text-transform: capitalize;
   text-decoration: none;
   color: white;
@@ -61,6 +66,23 @@ i {
   color: white;
 }
 
+.nav-ul > *  {
+  border-bottom: 0.5px solid white;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  cursor: pointer;
+  
+}
+.nav-ul > *:hover {
+  opacity: 0.6;
+}
+.nav-ul > li > a {
+  color: #f5f5f5;
+  font-weight: 50;
+  line-height: 100%;
+}
+
 .phone-nav-active {
   height: auto;
   width: 100%;
@@ -76,3 +98,69 @@ i {
   background-color: rgb(225, 140, 140);
   padding: 10px;
 }
+
+/* styling forms */
+
+form {
+  background: #ffffff;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+form label {
+  display: none;
+}
+form:last-child {
+  border: none !important;
+}
+.field {
+  margin-left: 20px;
+  border-bottom: 1px solid black;
+
+}
+.field  > input {
+  background: none !important;
+  border: none !important;
+  border-bottom: 1px solid var(--text-color);
+}
+input::placeholder {
+  border: none;
+  padding-inline-start: 5px;
+  text-transform: capitalize;
+  font-weight: 50;
+}
+/* chrome default input stles */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+
+}
+input[type='submit'] {
+  border: unset;
+  background: unset;
+}
+.show-label {
+  display: unset;
+}
+
+.devise-links {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 30px;
+}
+.devise-links > * {
+  border: unset;
+  background: unset;
+}
+.actions {
+  text-align: center;
+  padding: 5px;
+  background: none;
+}
+
+
+
+
