@@ -1,38 +1,32 @@
 <header id='header'>
-  <div class='header-links'>
+  <div class='header-links'> 
     <i class='fa fa-bars' id= 'phone-nav-btn'></i>
-
-    <%= link_to 'transactions', root_path %> 
+    <%= link_to 'Home' , root_path %> 
     <i class='fa fa-search'></i>
   </div>
-  <% if current_page?(root_path) %>
-    <%= link_to '<- Go back', :back, class:'go-back' %>
-  <%else%>
-    <ul class='nav-ul d-none' id='nav-ul'>
-      <li>bamo</li>
-      <li>bamo</li>
-      <li>bamo</li>
-    </ul>
-    <script>
-      (function() {
-        const navUl = document.getElementById('nav-ul');
-        const navBtn = document.getElementById('phone-nav-btn');
-        const container = document.getElementById('container');
-        const header = document.getElementById('header');
+  <ul class='nav-ul d-none' id='nav-ul'>
+    <li><%= link_to "Sign up", new_user_registration_path %></li>
+    <li><%= link_to "Sign in", new_user_session_path %></li>
+  </ul>
+  <script>
+    (function() {
+      const navUl = document.getElementById('nav-ul');
+      const navBtn = document.getElementById('phone-nav-btn');
+      const container = document.getElementById('container');
+      const header = document.getElementById('header');
 
-        navBtn.addEventListener('click', () => {
-            if(navBtn.classList.contains('fa-bars')) {
-            navUl.classList.replace('d-none','phone-nav-active');
-            navBtn.classList.replace('fa-bars','fa-close');
-            header.classList.add('header-active');
-            }
-            else {
-            navUl.classList.replace('phone-nav-active', 'd-none');
-            navBtn.classList.replace('fa-close', 'fa-bars');
-            header.classList.remove('header-active');
-            }
-          })
-      })();
-    </script>
-  <%end%>
+      navBtn.addEventListener('click', () => {
+          if(navBtn.classList.contains('fa-bars')) {
+          navUl.classList.replace('d-none','phone-nav-active');
+          navBtn.classList.replace('fa-bars','fa-close');
+          header.classList.add('header-active');
+          }
+          else {
+          navUl.classList.replace('phone-nav-active', 'd-none');
+          navBtn.classList.replace('fa-close', 'fa-bars');
+          header.classList.remove('header-active');
+          }
+        })
+    })();
+  </script>
 </header>
