@@ -5,14 +5,41 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-     <p class="notice"><%= notice %></p>
-     <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <div class = 'container' id='container'>
+      <%= render 'layouts/navbar' %>
+      
+      <% if alert %>
+        <div class="notification" id='alert'>
+          <strong><%= alert%></strong> 
+          <i class='fa fa-close' id='close-alert'></i>
+          <script>
+          (function () {
+            let closeAlert = document.getElementById('close-alert');
+            closeAlert.addEventListener('click', () => {
+              closeAlert.parentElement.remove();
+            })
+          })();
+          </script>
+        </div>  
+        <%end%>
+        <% if notice %>
+        <p class= 'notification' id='notice'><%= notice%> </p>
+        <script>
+          // this function auto remove the alert after 2 seconds
+          setTimeout (function () {
+          let alertElement = document.getElementById('notice')
+          alertElement.remove()
+          }, 2000);
+        </script>
+      <%end %>
+
+      <%= yield %>
+    </div>
   </body>
 </html>
