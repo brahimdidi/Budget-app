@@ -1,0 +1,10 @@
+<section>
+<ul class= 'list'>
+  <% @groups.each do |group| %>
+    <li>
+      <h2>name: <%= group.name %></h2>
+      <h3>icon: <%= group.icon %></h3>
+    </li>
+  <%end%>
+</ul>
+</section>
