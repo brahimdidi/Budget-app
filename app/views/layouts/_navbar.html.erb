@@ -1,5 +1,9 @@
 <header id='header'>
   <div class='header-links'>
+  <div class='d-none ' id='search-div'>
+    <input type="search" class='search-input' placeholder="Search...">
+    <button type="submit">Search</button>
+  </div>
    <%@title = controller.controller_name %>
    <% if @title == 'sessions' %>
     <%@title = 'Log in '%>
@@ -7,11 +11,11 @@
      <%@title = 'Sign Up'%>
    <%end%>
     <i class='fa fa-bars' id= 'phone-nav-btn'></i>
-    <a><%=@title%></a>
-    <i class='fa fa-search'></i>
+    <i class="fa fa-h6" id= 'nav-title'><%=@title%></i>
+    <i class="fa fa-search" id= 'search-btn'></i>
   </div>
   <ul class='nav-ul d-none' id='nav-ul'>
-  <li> <%= link_to 'Home' , root_path %> </li>
+  <li> <%= link_to 'Home' , root_path %></li>
     <% if user_signed_in? %>
       <li><%= link_to "Sign out", destroy_user_session_path %></li>
     <%else%>
@@ -23,6 +27,9 @@
     (function() {
       const navUl = document.getElementById('nav-ul');
       const navBtn = document.getElementById('phone-nav-btn');
+      const searchBtn = document.getElementById('search-btn');
+      const searchDiv = document.getElementById('search-div');
+      const navTitle = document.getElementById('nav-title');
       const container = document.getElementById('container');
       const header = document.getElementById('header');
 
@@ -37,7 +44,21 @@
           navBtn.classList.replace('fa-close', 'fa-bars');
           header.classList.remove('header-active');
           }
-        })
+        });
+      searchBtn.addEventListener('click', () => {
+        if(searchBtn.classList.contains('fa-search')) {
+        searchBtn.classList.replace('fa-search','fa-close');
+        searchDiv.classList.replace('d-none','search-div');
+        navBtn.classList.add('d-none');
+        navTitle.classList.add('d-none');
+        }
+        else {
+        searchBtn.classList.replace('fa-close','fa-search');
+        searchDiv.classList.replace('search-div','d-none');
+        navBtn.classList.remove('d-none');
+        navTitle.classList.remove('d-none');
+        }
+      });
     })();
   </script>
 </header>
