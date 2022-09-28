@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+ 
+ /* main styles of the app */
  :root {
   --light: #f5f5f5;
   --main-color:#3778c2;
@@ -37,16 +39,22 @@
  a:hover, button:hover, i:hover, input[type=submit]:hover {
   opacity: 0.6;
  }
+ img {
+  max-width: 100px;
+  max-height: 150px;
+  padding: 5px;
+}
 .d-none {
   display: none;
 }
- .container {
-   position: relative;
-   padding: 10px;
-   max-width: 600px;
-   margin: 0 auto;
-   background-color: var(--light);
- }
+.container {
+  position: relative;
+  padding: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: var(--light);
+}
+ /* styling the header and navbar */
 header > a,.header-links > a{
   text-transform: capitalize;
   text-decoration: none;
@@ -94,6 +102,7 @@ i {
   align-items: center;
   padding: 10px;
 }
+/* styling the alerts */
 .alert, .notification {
   width: 100%;
   display: flex;
@@ -153,6 +162,7 @@ input[type='submit'] {
   display: unset;
 }
 
+/* styling devise links */
 .devise-links {
   display: flex;
   justify-content: space-evenly;
@@ -168,6 +178,7 @@ input[type='submit'] {
   background: none;
 }
 
+/* styling the lists and its childs  */
 .list {
   flex-direction: column;
   gap: 10px;
@@ -188,10 +199,30 @@ input[type='submit'] {
   text-align: center;
 }
 
-img {
-  max-width: 100px;
-  max-height: 150px;
-  padding: 5px;
+/* styling the splach screen page */
+.splash-main {
+  position: fixed;
+  background-color: var(--light);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.splash-main > h1 {
+  position: absolute;
+  top: 40%;
+  font-family: monospace;
+  text-align: center;
+  justify-content: center;
+}
+.splash-main > ul {
+  position: absolute;
+  bottom: 10%;
 }
 
 
