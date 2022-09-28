@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   layout "splash_screen"
-  def index
+  def static
   end
 end
 
