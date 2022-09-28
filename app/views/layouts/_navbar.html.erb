@@ -1,10 +1,17 @@
 <header id='header'>
-  <div class='header-links'> 
+  <div class='header-links'>
+   <%@title = controller.controller_name %>
+   <% if @title == 'sessions' %>
+    <%@title = 'Log in '%>
+   <%elsif @title == 'registrations'%>
+     <%@title = 'Sign Up'%>
+   <%end%>
     <i class='fa fa-bars' id= 'phone-nav-btn'></i>
-    <%= link_to 'Home' , root_path %> 
+    <a><%=@title%></a>
     <i class='fa fa-search'></i>
   </div>
   <ul class='nav-ul d-none' id='nav-ul'>
+  <li> <%= link_to 'Home' , root_path %> </li>
     <% if user_signed_in? %>
       <li><%= link_to "Sign out", destroy_user_session_path %></li>
     <%else%>
