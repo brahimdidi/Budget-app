@@ -1,0 +1,26 @@
+<% if alert %>
+  <div class="alert <%=@style%>" id='alert'>
+    <strong><%= alert%></strong> 
+    <i class='fa fa-close' id='close-alert'></i>
+    <script>
+    // this function adds a close button to the alert
+    (function () {
+      let closeAlert = document.getElementById('close-alert');
+      closeAlert.addEventListener('click', () => {
+        closeAlert.parentElement.remove();
+      })
+    })();
+    </script>
+  </div>  
+<%end%>
+  
+<% if notice %>
+  <p class= 'notification <%=@style%>' id='notice'><%= notice%> </p>
+  <script>
+    // this function auto remove the alert after 2 seconds
+    setTimeout (function () {
+    let alertElement = document.getElementById('notice');
+    alertElement.remove();
+    }, 2000);
+  </script>
+<%end %>
