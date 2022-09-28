@@ -6,7 +6,6 @@ Rails.application.routes.draw do
 
   authenticated :user do
     root 'groups#index', as: :root #-> if user is logged in
-    resources :controller #-> ONLY available for logged in users
   end
 
   unauthenticated :user do
