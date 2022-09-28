@@ -34,7 +34,7 @@
  }
  a, button, i, input[type=submit]{
   cursor: pointer;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: sans-serif;
  }
  a:hover, button:hover, i:hover, input[type=submit]:hover {
   opacity: 0.6;
@@ -127,7 +127,7 @@ form {
 form label {
   display: none;
 }
-form:last-child {
+.field:nth-last-child(2) {
   border: none !important;
 }
 .field {
@@ -165,8 +165,9 @@ input[type='submit'] {
 /* styling devise links */
 .devise-links {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   margin-top: 30px;
+  gap: 10px;
 }
 .devise-links > * {
   border: unset;
