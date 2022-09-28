@@ -12,12 +12,14 @@
   <body>
     <div class = 'container' id='container'>
       <main class="splash-main">
-        <h1>Budget App</h1>
-        <ul id='splash-links'>
-        <li><%= link_to "Sign up", new_user_registration_path %></li>
-        <li><%= link_to "Sign in", new_user_session_path %></li>
-        </ul>
-      </main>
+        <% @style = 'splash-notif' %>
+        <%= render 'layouts/notifications', :style => :style %>
+          <h1>Budget App</h1>
+          <ul id='splash-links'>
+          <li><%= link_to "Sign up", new_user_registration_path %></li>
+          <li><%= link_to "Sign in", new_user_session_path %></li>
+          </ul>
+        </main>
     </div>
   </body>
 </html>
