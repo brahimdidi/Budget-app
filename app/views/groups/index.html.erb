@@ -1,9 +1,15 @@
 <section>
-<ul class= 'list'>
+<ul class= 'list d-flex'>
   <% @groups.each do |group| %>
     <li>
-      <h2>name: <%= group.name %></h2>
-      <h3>icon: <%= group.icon %></h3>
+      <div class= 'd-flex'>
+        <div class='d-flex'>
+          <img src=<%= group.icon %> >
+          <p><%= group.name %></p>
+        </div>
+        <h2>amount</h2>
+      </div>
+    <p><%= group.created_at %></p>
     </li>
   <%end%>
 </ul>

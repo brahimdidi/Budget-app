@@ -27,6 +27,9 @@
   text-decoration: none;
   color: var(--text-color);
  }
+ .d-flex {
+  display: flex;
+ }
  a, button, i, input[type=submit]{
   cursor: pointer;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -166,15 +169,29 @@ input[type='submit'] {
 }
 
 .list {
-  display: flex;
   flex-direction: column;
   gap: 10px;
 }
 .list > li {
   background-color: #ffffff;
-  display: flex;
+  padding: 5px;
+}
+.list > li > div {
+  justify-content: space-between;
+  align-items: center;
   gap: 5px;
 }
+.list > li > div > div {
+  align-items: center;
+}
+.list > li > p {
+  text-align: center;
+}
 
+img {
+  max-width: 100px;
+  max-height: 150px;
+  padding: 5px;
+}
 
 
