@@ -199,30 +199,3 @@ input[type='submit'] {
   text-align: center;
 }
 
-/* styling the splach screen page */
-.splash-main {
-  position: fixed;
-  background-color: var(--light);
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.splash-main > h1 {
-  position: absolute;
-  top: 40%;
-  font-family: monospace;
-  text-align: center;
-  justify-content: center;
-}
-.splash-main > ul {
-  position: absolute;
-  bottom: 10%;
-}
-
-
