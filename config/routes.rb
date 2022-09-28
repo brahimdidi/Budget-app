@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   end
 
   unauthenticated :user do
-    root 'home#index', as: :unauthenticated #-> if user is not logged in
+    root 'home#static', as: :unauthenticated #-> if user is not logged in
   end
 end
