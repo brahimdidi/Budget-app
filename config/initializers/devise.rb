@@ -35,7 +35,6 @@ Devise.setup do |config|
   # Configure the parent class to the devise controllers.
   config.parent_controller = 'TurboDeviseController'
 
-
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
