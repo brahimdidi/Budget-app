@@ -29,6 +29,10 @@
   text-decoration: none;
   color: var(--text-color);
  }
+ h2 {
+  padding: 5px;
+  text-align: center;
+ }
  .d-flex {
   display: flex;
  }
@@ -47,7 +51,7 @@
 .d-none {
   display: none;
 }
-.container {
+.container-all {
   position: relative;
   padding: 10px;
   max-width: 600px;
@@ -122,12 +126,11 @@ form {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
 form label {
   display: none;
 }
-.field:nth-last-child(2) {
+.remember-me{
   border: none !important;
 }
 .field {
