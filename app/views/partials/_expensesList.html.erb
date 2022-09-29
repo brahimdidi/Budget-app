@@ -1,14 +1,24 @@
 <section>
+<% @expenses = @data[:expenses]%>
+<% @group = @data[:group] %>
 <% if @expenses.empty? %>
   <h2>No expenses</h2>
 <%else%>
+<% unless @group.nil? %>
+  <div class= 'd-flex total-amount-div'>
+    <h3>Gift credit</h3>
+    <h2>$<%= @group.total_amount%></h2>
+  </div>
+<% end %>
 <ul class= 'list d-flex'>
   <% @expenses.each do |expense| %>
     <li>
       <div class= 'd-flex'>
         <div class='d-flex'>
-          <h2><%= expense.name %></h2>
-          <h2><%= expense.groups[0].name %></h2>
+        <% unless @group.nil? %>
+          <img src =<%= @group.icon%> >
+        <% end %>
+          <h3><%= expense.name %></h3>
         </div>
         <h2>$<%= expense.amount%></h2>
       </div>
@@ -18,7 +28,7 @@
 </ul>
 <%end%>
 
-<%@link = "/users/#{current_user.id}/expenses/new"%>
-<%@data = {text: 'add new expense', link: @link}%>
+<% @link = "/users/#{current_user.id}/expenses/new" %>
+<% @data = { text: 'add new expense', link: @link } %>
 </section>
 <%= render 'partials/footer', :data => :data %>
