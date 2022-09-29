@@ -10,9 +10,7 @@ class ExpensesController < ApplicationController
     @total_amount =
       @expenses = []
     @expensegroups.each do |exgroup|
-      if exgroup.expense.user == current_user
-        @expenses << exgroup.expense
-      end
+      @expenses << exgroup.expense if exgroup.expense.user == current_user
     end
   end
 

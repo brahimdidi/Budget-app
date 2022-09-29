@@ -7,7 +7,7 @@ RSpec.describe Expense, type: :model do
   end
 
   it 'shows exact name' do
-    expect(@expense.name).to eql ('expense')
+    expect(@expense.name).to eql('expense')
     expect(@expense.amount).to eql 45
   end
   it 'can not create a expense without  a name' do

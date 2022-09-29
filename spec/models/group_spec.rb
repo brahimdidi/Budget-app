@@ -7,8 +7,8 @@ RSpec.describe Group, type: :model do
   end
 
   it 'shows exact name' do
-    expect(@group.name).to eql ('group')
-    expect(@group.icon).to eql ('group icon')
+    expect(@group.name).to eql('group')
+    expect(@group.icon).to eql('group icon')
   end
   it 'can not create a group without  a name' do
     group = Group.new(icon: 'group icon', user: @user)

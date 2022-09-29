@@ -3,7 +3,7 @@ RSpec.describe '/', type: :request do
     get root_path
   end
 
-  describe "expect root path to be splash page" do
+  describe 'expect root path to be splash page' do
     it 'should have inventory name' do
       expect(response.body).to include 'Log in'
     end
