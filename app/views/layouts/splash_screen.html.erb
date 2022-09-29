@@ -5,19 +5,18 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
   <body>
-      <main class="splash-main">
-        <% @style = 'splash-notif' %>
-        <%= render 'layouts/notifications', :style => :style %>
-          <h1>Budget App</h1>
-          <ul id='splash-links'>
-            <%= link_to "Log in", new_user_session_path , class: 'splash-links', id: 'splash-login'%>
-            <%= link_to "Sign up", new_user_registration_path , class: 'splash-links' %>
-          </ul>
-      </main>
+    <main class="splash-main">
+      <% @style = 'splash-notif' %>
+      <%= render 'layouts/notifications', :style => :style %>
+        <h1>Budget App</h1>
+        <ul id='splash-links'>
+          <%= link_to "Log in", new_user_session_path , class: 'splash-links', id: 'splash-login'%>
+          <%= link_to "Sign up", new_user_registration_path , class: 'splash-links' %>
+        </ul>
+    </main>
   </body>
 </html>
