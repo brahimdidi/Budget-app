@@ -1,7 +1,7 @@
 <header id='header'>
   <div class='header-links'>
-  <div class='d-none ' id='search-div'>
-    <input type="search" class='search-input' placeholder="Search...">
+  <div class='d-none search-div' id='search-div'>
+    <input type="search" class='search-input' placeholder="Search..."  name="serch" id= 'search-input'>
     <button type="submit">Search</button>
   </div>
    <%@title = controller.controller_name %>
@@ -29,6 +29,7 @@
       const navBtn = document.getElementById('phone-nav-btn');
       const searchBtn = document.getElementById('search-btn');
       const searchDiv = document.getElementById('search-div');
+      const searchInput = document.getElementById('search-input');
       const navTitle = document.getElementById('nav-title');
       const container = document.getElementById('container');
       const header = document.getElementById('header');
@@ -38,11 +39,13 @@
           navUl.classList.replace('d-none','phone-nav-active');
           navBtn.classList.replace('fa-bars','fa-close');
           header.classList.add('header-active');
+          setTimeout (function () { navUl.style.transform = 'unset';}, 100);
           }
           else {
           navUl.classList.replace('phone-nav-active', 'd-none');
           navBtn.classList.replace('fa-close', 'fa-bars');
           header.classList.remove('header-active');
+          navUl.style.transform = 'translate(100%,0%)';
           }
         });
       searchBtn.addEventListener('click', () => {
@@ -51,12 +54,14 @@
         searchDiv.classList.replace('d-none','search-div');
         navBtn.classList.add('d-none');
         navTitle.classList.add('d-none');
+        searchInput.autofocus = true;
         }
         else {
         searchBtn.classList.replace('fa-close','fa-search');
         searchDiv.classList.replace('search-div','d-none');
         navBtn.classList.remove('d-none');
         navTitle.classList.remove('d-none');
+        searchInput.autofocus = false;
         }
       });
     })();
