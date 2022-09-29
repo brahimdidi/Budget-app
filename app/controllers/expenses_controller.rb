@@ -7,8 +7,8 @@ class ExpensesController < ApplicationController
     @user = User.find(current_user.id)
     @group = Group.find(params[:id])
     @expensegroups = ExpenseGroup.where(group: @group).includes(expense: [:user]).order('created_at DESC')
-    @total_amount = 
-    @expenses = []
+    @total_amount =
+      @expenses = []
     @expensegroups.each do |exgroup|
       if exgroup.expense.user == current_user
         @expenses << exgroup.expense

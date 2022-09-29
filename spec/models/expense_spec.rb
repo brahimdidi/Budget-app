@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Expense, type: :model do
   before :each do
     @user = User.new(name: 'test', email: 'test@gmail.com')
-    @expense = Expense.new(name: 'expense' , amount: 45, user: @user)
+    @expense = Expense.new(name: 'expense', amount: 45, user: @user)
   end
 
   it 'shows exact name' do

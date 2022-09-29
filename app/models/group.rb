@@ -11,7 +11,7 @@ class Group < ApplicationRecord
     @sum = 0
 
     expenses.each do |expense|
-     @sum += expense.amount
+      @sum += expense.amount
     end
     @sum
   end
