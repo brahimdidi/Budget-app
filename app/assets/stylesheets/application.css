@@ -129,18 +129,18 @@ input[type="search"]:focus {
 
 .nav-ul > *  {
   border-bottom: 0.5px solid white;
+  padding: 10px;
   padding-right: 10px;
   padding-bottom: 10px;
   width: 100%;
-  cursor: pointer;
-}
-.nav-ul > *:hover {
-  opacity: 0.6;
-}
-.nav-ul > li > a {
   color: #f5f5f5;
   font-weight: 50;
   line-height: 100%;
+  font-size: 17px;
+}
+.nav-ul > *:hover {
+  opacity: 1.6;
+  background: white;
 }
 
 .phone-nav-active {
