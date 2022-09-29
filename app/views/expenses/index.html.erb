@@ -1,1 +1,2 @@
-<%= render 'partials/expensesList', :expenses => :expenses %>
+<% @data = { expenses: @expenses} %>
+<%= render 'partials/expensesList', :data => :data %>
