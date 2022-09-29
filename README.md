@@ -5,7 +5,7 @@
 > 
 The Budget app is a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
 # Video Presentation 
-[link to the video presentation of the project] ()
+[link to the video presentation of the project] (https://www.loom.com/share/1960fa61a0344d0dbc63484de1218a01)
 
 
 ## Built With
