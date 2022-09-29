@@ -53,10 +53,11 @@
 }
 .container-all {
   position: relative;
-  padding: 10px;
+  padding: 4px;
   max-width: 600px;
   margin: 0 auto;
   background-color: var(--light);
+  height: 100vh;
 }
  /* styling the header and navbar */
 header > a,.header-links > a{
@@ -137,6 +138,7 @@ input[type="search"]:focus {
   font-weight: 50;
   line-height: 100%;
   font-size: 17px;
+  
 }
 .nav-ul > *:hover {
   opacity: 1.6;
@@ -154,6 +156,7 @@ input[type="search"]:focus {
   transform: translate(100%,0%);
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
 }
+
 /* styling the alerts */
 .alert, .notification {
   width: 100%;
@@ -177,6 +180,8 @@ form {
   width: 100%;
   display: flex;
   flex-direction: column;
+  margin-top: 10px;
+  padding: 10px;
 }
 form label {
   display: none;
@@ -223,12 +228,16 @@ input::placeholder {
 
 /* styling the lists and its childs  */
 .list {
+  margin-top: 10px;
   flex-direction: column;
   gap: 10px;
+  align-items: center;
+  justify-content: center;
 }
 .list > li {
   background-color: #ffffff;
   padding: 5px;
+  width: 96%;
 }
 .list > li > div {
   justify-content: space-between;
@@ -247,4 +256,28 @@ input::placeholder {
   width: 50%  ;
 }
 
+footer {
+  background-color: var(--second-color);
+  height: 100px;
+  padding: 10px;
+  width: 96%;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 30px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+footer > a {
+  width: 90%;
+  font-size: 30px;
+  border: 1px solid white;
+  padding: 10px;
+  color: white;
+}
+footer > a:hover {
+  background: lightblue;
+  color: black;
+}
 
