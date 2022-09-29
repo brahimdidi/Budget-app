@@ -1,0 +1,47 @@
+/* styling the splach screen page */
+.splash-main {
+  position: fixed;
+  background-color: var(--light);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.splash-notif {
+  position: absolute;
+  top: 5%;
+}
+.splash-main > h1 {
+  position: absolute;
+  top: 40%;
+  font-family: 'FontAwesome';
+  text-align: center;
+}
+.splash-main > ul {
+  position: absolute;
+  bottom: 10%;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.splash-links {
+  padding: 10px;
+  font-size: 28px;
+  font-weight: 100;
+  font-family: inherit;
+}
+#splash-login {
+  background: var(--main-color);
+  color: var(--light);
+  opacity: 1.5;
+}

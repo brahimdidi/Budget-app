@@ -1,0 +1,82 @@
+<header id='header'>
+  <div class='header-links'>
+  <div class='d-none search-div' id='search-div'>
+    <input type="search" class='search-input' placeholder="Search..."  name="serch" id= 'search-input'>
+    <button type="submit">Search</button>
+  </div>
+   <%@title = controller.controller_name %>
+   <% if @title == 'sessions' %>
+    <%@title = 'Log in '%>
+   <%elsif @title == 'registrations'%>
+     <%@title = 'Sign Up'%>
+   <%end%>
+   <% @current_url = request.url.to_s %>
+   <% if user_signed_in? && (@current_url.include? "new")%>
+      <%=link_to '', :back , class: 'fa fa-arrow-left', id:'back-btn'%>
+   <%else%>
+    <i class='fa fa-bars' id= 'phone-nav-btn'></i>
+   <%end%>
+    <i class="fa fa-h6" id= 'nav-title'><%=@title%></i>
+    <i class="fa fa-search" id= 'search-btn'></i>
+  </div>
+  <ul class='nav-ul d-none' id='nav-ul'>
+    <%= link_to 'Home' , root_path %>
+    <% unless @current_url.include? "group" or current_page?(root_path)  or !user_signed_in? %>
+      <%=link_to ' Go back', :back , class: 'fa fa-arrow-left'%> 
+    <% end %>
+    <% if user_signed_in? %>
+      <%= link_to "My Expenses", user_expenses_path(current_user) %>
+      <%= link_to "Sign out", destroy_user_session_path %>
+    <%else%>
+      <%= link_to "Sign up", new_user_registration_path %>
+      <%= link_to "Sign in", new_user_session_path %>
+    <%end%>
+  </ul>
+  <script>
+    (function() {
+      const navUl = document.getElementById('nav-ul');
+      const navBtn = document.getElementById('phone-nav-btn');
+      const backBtn = document.getElementById('back-btn')
+      const searchBtn = document.getElementById('search-btn');
+      const searchDiv = document.getElementById('search-div');
+      const searchInput = document.getElementById('search-input');
+      const navTitle = document.getElementById('nav-title');
+      const container = document.getElementById('container');
+      const header = document.getElementById('header');
+      if(navBtn){
+      navBtn.addEventListener('click', () => {
+          if(navBtn.classList.contains('fa-bars')) {
+          navUl.classList.replace('d-none','phone-nav-active');
+           navBtn.classList.replace('fa-bars','fa-close');
+          header.classList.add('header-active');
+          setTimeout (function () { navUl.style.transform = 'unset';}, 100);
+          }
+          else {
+          navUl.classList.replace('phone-nav-active', 'd-none');
+           navBtn.classList.replace('fa-close', 'fa-bars');
+          header.classList.remove('header-active');
+          navUl.style.transform = 'translate(100%,0%)';
+          }
+        });
+      }
+      searchBtn.addEventListener('click', () => {
+        if(searchBtn.classList.contains('fa-search')) {
+        searchBtn.classList.replace('fa-search','fa-close');
+        searchDiv.classList.replace('d-none','search-div');
+        if (navBtn) navBtn.classList.add('d-none');
+        if (backBtn) backBtn.classList.add('d-none')
+        navTitle.classList.add('d-none');
+        searchInput.autofocus = true;
+        }
+        else {
+        searchBtn.classList.replace('fa-close','fa-search');
+        searchDiv.classList.replace('search-div','d-none');
+        if (navBtn) navBtn.classList.remove('d-none');
+        if (backBtn) backBtn.classList.remove('d-none')
+        navTitle.classList.remove('d-none');
+        searchInput.autofocus = false;
+        }
+      });
+    })();
+  </script>
+</header>

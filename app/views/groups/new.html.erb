@@ -1,0 +1,9 @@
+<%= form_with model: @group, class: ''  do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name, class:'form-control', placeholder: 'name',:required => true ,autofocus: true %>
+    <%= form.label :icon %>
+    <%= form.text_field :icon, class:'form-control', placeholder: 'icon picture link',:required => true %>
+  <div class='actions'>
+    <%= form.submit "Create group", class:"button-primary" %>
+  </div>
+<% end %>
