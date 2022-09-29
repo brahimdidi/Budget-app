@@ -10,7 +10,11 @@
    <%elsif @title == 'registrations'%>
      <%@title = 'Sign Up'%>
    <%end%>
+   <% if user_signed_in? && !current_page?(root_path) && !current_page?(user_groups_path(current_user)) %>
+      <%=link_to '', :back , class: 'fa fa-arrow-left'%>
+   <%else%>
     <i class='fa fa-bars' id= 'phone-nav-btn'></i>
+   <%end%>
     <i class="fa fa-h6" id= 'nav-title'><%=@title%></i>
     <i class="fa fa-search" id= 'search-btn'></i>
   </div>
