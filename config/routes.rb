@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   end
   # Defines the root path route ("/")
   post 'users/:user_id/groups/new', :to => 'groups#create'
+  post 'users/:user_id/expenses/new', :to => 'expenses#create'
+  get 'users/:user_id/expenses/:group_id', :to => 'expenses#show'
   authenticated :user do
     root 'groups#index', as: :root #-> if user is logged in
   end
