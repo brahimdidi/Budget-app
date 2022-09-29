@@ -10,7 +10,9 @@
         <h2>$<%=group.total_amount%></h2>
       </div>
     <p class= 'date'><%= group.created_at %></p>
-    </li>
+    <% @link = "users/#{current_user.id}/expenses/#{group.id}" %>
+    <a href = <%=@link %> > 'show expenses'  </a>
+    </li> 
   <%end%>
 </ul>
 <%@link = "/users/#{current_user.id}/groups/new"%>
