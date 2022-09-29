@@ -20,9 +20,12 @@
     <i class="fa fa-search" id= 'search-btn'></i>
   </div>
   <ul class='nav-ul d-none' id='nav-ul'>
-   <%= link_to 'Home' , root_path %>
+    <%= link_to 'Home' , root_path %>
+    <% unless @current_url.include? "group" or current_page?(root_path)  or !user_signed_in? %>
+      <%=link_to ' Go back', :back , class: 'fa fa-arrow-left'%> 
+    <% end %>
     <% if user_signed_in? %>
-      <%= link_to "Expenses", user_expenses_path(current_user) %>
+      <%= link_to "My Expenses", user_expenses_path(current_user) %>
       <%= link_to "Sign out", destroy_user_session_path %>
     <%else%>
       <%= link_to "Sign up", new_user_registration_path %>
