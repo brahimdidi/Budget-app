@@ -7,10 +7,13 @@
           <img src=<%= group.icon %> >
           <p><%= group.name %></p>
         </div>
-        <h2>amount</h2>
+        <h2>$<%=group.total_amount%></h2>
       </div>
-    <p><%= group.created_at %></p>
+    <p class= 'date'><%= group.created_at %></p>
     </li>
   <%end%>
 </ul>
+<%@link = "/users/#{current_user.id}/groups/new"%>
+<%@data = {text: 'add new group', link: @link}%>
 </section>
+<%= render 'partials/footer', :data => :data %>
