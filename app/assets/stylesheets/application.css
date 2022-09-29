@@ -57,7 +57,6 @@
   max-width: 600px;
   margin: 0 auto;
   background-color: var(--light);
-  height: 100vh;
 }
  /* styling the header and navbar */
 header > a,.header-links > a{
@@ -260,7 +259,6 @@ footer {
   background-color: var(--second-color);
   height: 100px;
   padding: 10px;
-  width: 96%;
   max-width: 600px;
   margin: 0 auto;
   margin-top: 30px; 

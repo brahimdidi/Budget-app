@@ -6,7 +6,7 @@
     // this function adds a close button to the alert
     (function () {
       let closeAlert = document.getElementById('close-alert');
-      if (closeAlert != null)
+      if (closeAlert)
       closeAlert.addEventListener('click', () => {
         closeAlert.parentElement.remove();
       })
@@ -21,7 +21,7 @@
     // this function auto remove the notice after 2 seconds
     setTimeout (function () {
     let noticeElement = document.getElementById('notice');
-    if (noticeElement != null) noticeElement.remove();
+    if (noticeElement) noticeElement.remove();
     clearTimeout();
     }, 2000);
   </script>
