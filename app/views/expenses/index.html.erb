@@ -1,0 +1,15 @@
+<section>
+<ul class= 'list d-flex'>
+  <% @Expenses.each do |expense| %>
+    <li>
+      <div class= 'd-flex'>
+        <div class='d-flex'>
+          <h2><%= expense.name %></h2>
+        </div>
+        <h2>$<%= expense.amount%></h2>
+      </div>
+    <p  class='date'><%= expense.created_at %></p >
+    </li>
+  <%end%>
+</ul>
+</section>
