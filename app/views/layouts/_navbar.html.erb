@@ -10,7 +10,8 @@
    <%elsif @title == 'registrations'%>
      <%@title = 'Sign Up'%>
    <%end%>
-   <% if user_signed_in? && !current_page?(root_path) && !current_page?(user_groups_path(current_user)) %>
+   <% @current_url = request.url.to_s %>
+   <% if user_signed_in? && (@current_url.include? "new")%>
       <%=link_to '', :back , class: 'fa fa-arrow-left', id:'back-btn'%>
    <%else%>
     <i class='fa fa-bars' id= 'phone-nav-btn'></i>
@@ -21,6 +22,7 @@
   <ul class='nav-ul d-none' id='nav-ul'>
    <%= link_to 'Home' , root_path %>
     <% if user_signed_in? %>
+      <%= link_to "Expenses", user_expenses_path(current_user) %>
       <%= link_to "Sign out", destroy_user_session_path %>
     <%else%>
       <%= link_to "Sign up", new_user_registration_path %>
