@@ -2,16 +2,16 @@
 <ul class= 'list d-flex'>
   <% @groups.each do |group| %>
     <li>
-      <div class= 'd-flex'>
+      <% @link = "users/#{current_user.id}/expenses/#{group.id}" %>
+      <a href = <%=@link %> class= 'd-flex'>
         <div class='d-flex'>
-          <img src=<%= group.icon %> >
-          <p><%= group.name %></p>
+              <img src=<%= group.icon %> >
+              <p><%= group.name %></p>
         </div>
-        <h2>$<%=group.total_amount%></h2>
-      </div>
-    <p class= 'date'><%= group.created_at %></p>
-    <% @link = "users/#{current_user.id}/expenses/#{group.id}" %>
-    <a href = <%=@link %> > 'show expenses'  </a>
+        
+          <h2>$<%=group.total_amount%></h2>
+      </a>
+      <p class= 'date'><%= group.created_at %></p>
     </li> 
   <%end%>
 </ul>

@@ -32,6 +32,11 @@
  h2 {
   padding: 2px;
  }
+ h3 {
+  color: grey;
+  font-weight: 100;
+  font-size: 22px;
+ }
  .d-flex {
   display: flex;
  }
@@ -237,12 +242,19 @@ input::placeholder {
   padding: 5px;
   width: 96%;
 }
-.list > li > div {
+.list > li > div, .list > li > a {
   justify-content: space-between;
   align-items: center;
   gap: 5px;
 }
-.list > li > div > div {
+.list > li > div > div, .list > li > a> div {
+  align-items: center;
+}
+.total-amount-div {
+  width: 100%;
+  background: white;
+  justify-content: space-between;
+  padding: 10px;
   align-items: center;
 }
 .date {
