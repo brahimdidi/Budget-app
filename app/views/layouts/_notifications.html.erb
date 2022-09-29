@@ -6,6 +6,7 @@
     // this function adds a close button to the alert
     (function () {
       let closeAlert = document.getElementById('close-alert');
+      if (closeAlert != null)
       closeAlert.addEventListener('click', () => {
         closeAlert.parentElement.remove();
       })
@@ -14,13 +15,14 @@
   </div>  
 <%end%>
   
-<% if notice %>
+<%if notice %>
   <p class= 'notification <%=@style%>' id='notice'><%= notice%> </p>
   <script>
-    // this function auto remove the alert after 2 seconds
+    // this function auto remove the notice after 2 seconds
     setTimeout (function () {
-    let alertElement = document.getElementById('notice');
-    alertElement.remove();
+    let noticeElement = document.getElementById('notice');
+    if (noticeElement != null) noticeElement.remove();
+    clearTimeout();
     }, 2000);
   </script>
 <%end %>
