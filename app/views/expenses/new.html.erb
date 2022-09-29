@@ -1,0 +1,11 @@
+<%= form_with model: @expense, class: ''  do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name, class:'form-control', placeholder: 'name',:required => true ,autofocus: true %>
+  <%= form.label :amount %>
+  <%= form.number_field :amount, class:'form-control', placeholder: 'amount',:required => true %>
+  <%= form.label "Select Group" %>
+  <%= form.select :group_id, @groups.map { |group| [group.name, group.id] } %>
+<div class='actions'>
+  <%= form.submit "Create expense", class:"button-primary" %>
+</div>
+<% end %>
