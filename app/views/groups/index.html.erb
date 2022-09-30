@@ -2,8 +2,8 @@
 <ul class= 'list d-flex'>
   <% @groups.each do |group| %>
     <li>
-      <% @link = "users/#{current_user.id}/expenses/#{group.id}" %>
-      <a href = <%=@link %> class= 'd-flex'>
+      <% @link =  user_expense_path(current_user.id, group.id) %>
+      <a href = <%= @link %> class= 'd-flex'>
         <div class='d-flex'>
               <img src=<%= group.icon %> >
               <p><%= group.name %></p>
