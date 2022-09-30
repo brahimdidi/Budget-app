@@ -1,25 +1,29 @@
+<% @title = controller.controller_name %>
+<% @action = controller.action_name %>
+<% if @title == 'sessions' %>
+<% @title = 'Log in ' %>
+<% elsif @title == 'registrations'%>
+  <% @title = 'Sign Up' %>
+<% end %>
+<% @current_url = request.url.to_s %>
+
+
 <header id='header'>
   <div class='header-links'>
   <div class='d-none search-div' id='search-div'>
     <input type="search" class='search-input' placeholder="Search..."  name="serch" id= 'search-input'>
     <button type="submit">Search</button>
   </div>
-   <%@title = controller.controller_name %>
-   <% if @title == 'sessions' %>
-    <%@title = 'Log in '%>
-   <%elsif @title == 'registrations'%>
-     <%@title = 'Sign Up'%>
-   <%end%>
-   <% @current_url = request.url.to_s %>
-   <% if user_signed_in? && (@current_url.include? "new")%>
-      <%=link_to '', :back , class: 'fa fa-arrow-left', id:'back-btn'%>
-   <%else%>
+   <% if user_signed_in? && (@current_url.include? "new") %>
+      <%= link_to '', :back , class: 'fa fa-arrow-left', id:'back-btn' %>
+   <% else %>
     <i class='fa fa-bars' id= 'phone-nav-btn'></i>
-   <%end%>
-    <i class="fa fa-h6" id= 'nav-title'><%=@title%></i>
+   <% end %>
+    <i class="fa fa-h6" id= 'nav-title'><%= @title %></i>
     <i class="fa fa-search" id= 'search-btn'></i>
   </div>
   <ul class='nav-ul d-none' id='nav-ul'>
+  bamo <% @action == %>
     <%= link_to 'Home' , root_path %>
     <% unless @current_url.include? "group" or current_page?(root_path)  or !user_signed_in? %>
       <%=link_to ' Go back', :back , class: 'fa fa-arrow-left'%> 
@@ -27,10 +31,10 @@
     <% if user_signed_in? %>
       <%= link_to "My Expenses", user_expenses_path(current_user) %>
       <%= link_to "Sign out", destroy_user_session_path %>
-    <%else%>
+    <% else %>
       <%= link_to "Sign up", new_user_registration_path %>
       <%= link_to "Sign in", new_user_session_path %>
-    <%end%>
+    <% end %>
   </ul>
   <script>
     (function() {

@@ -190,6 +190,7 @@ form label {
   display: none;
 }
 .remember-me{
+  margin-top: 10px;
   border: none !important;
 }
 .field {
