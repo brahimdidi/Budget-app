@@ -155,9 +155,13 @@ input[type="search"]:focus {
   padding: 10px;
   transform-origin: 0% 0%;
   transform: translate(100%,0%);
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: transform 0.2s cubic-bezier(0.77, 0.2, 0.05, 1);
 }
-
+.search-div {
+  transform-origin: 0% 0%;
+  transform: translate(100%,0%);
+  transition: transform 0.2s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
 /* styling the alerts */
 .alert, .notification {
   width: 100%;
@@ -174,7 +178,6 @@ input[type="search"]:focus {
 #close-alert {
   font-size: 17px;
 }
-
 
 
 /* styling forms */
