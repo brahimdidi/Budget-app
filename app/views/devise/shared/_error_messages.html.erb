@@ -1,5 +1,6 @@
 <% if resource.errors.any? %>
-  <div id="error_explanation">
+  <div class= 'alert' id="error_explanation">
+  <div>
     <h2>
       <%= I18n.t("errors.messages.not_saved",
                  count: resource.errors.count,
@@ -11,5 +12,17 @@
         <li><%= message %></li>
       <% end %>
     </ul>
+    </div>
+  <i class='fa fa-close' id='close-alert'></i>
+    <script>
+    // this function adds a close button to the alert
+    (function () {
+      let closeAlert = document.getElementById('close-alert');
+      if (closeAlert)
+      closeAlert.addEventListener('click', () => {
+        closeAlert.parentElement.remove();
+      })
+    })();
+    </script>
   </div>
 <% end %>
