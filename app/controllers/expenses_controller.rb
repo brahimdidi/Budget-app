@@ -4,7 +4,7 @@ class ExpensesController < ApplicationController
   end
 
   def show
-    @user = User.find(current_user.id)
+    @user = current_user
     @group = Group.find(params[:id])
     @expensegroups = ExpenseGroup.where(group: @group).includes(expense: [:user]).order('created_at DESC')
     @total_amount =
