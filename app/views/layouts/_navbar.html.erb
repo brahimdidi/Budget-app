@@ -70,15 +70,15 @@
         if (navBtn) navBtn.classList.add('d-none');
         if (backBtn) backBtn.classList.add('d-none')
         navTitle.classList.add('d-none');
-        searchInput.autofocus = true;
-        }
+        setTimeout (function () { searchDiv.style.transform = 'unset';}, 100);
+      }
         else {
         searchBtn.classList.replace('fa-close','fa-search');
         searchDiv.classList.replace('search-div','d-none');
         if (navBtn) navBtn.classList.remove('d-none');
         if (backBtn) backBtn.classList.remove('d-none')
         navTitle.classList.remove('d-none');
-        searchInput.autofocus = false;
+        searchDiv.style.transform = 'translate(100%,0%)';
         }
       });
     })();
