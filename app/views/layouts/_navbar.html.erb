@@ -1,12 +1,13 @@
 <% @title = controller.controller_name %>
 <% @action = controller.action_name %>
 <% if @title == 'sessions' %>
-<% @title = 'Log in ' %>
+   <% @title = 'Log in ' %>
 <% elsif @title == 'registrations'%>
-  <% @title = 'Sign Up' %>
+   <% @title = 'Sign Up' %>
+<% elsif @action ==  "new" %>
+   <% @title = 'New ' + @title.chop %>
 <% end %>
 <% @current_url = request.url.to_s %>
-
 
 <header id='header'>
   <div class='header-links'>
@@ -23,7 +24,6 @@
     <i class="fa fa-search" id= 'search-btn'></i>
   </div>
   <ul class='nav-ul d-none' id='nav-ul'>
-  bamo <% @action == %>
     <%= link_to 'Home' , root_path %>
     <% unless @current_url.include? "group" or current_page?(root_path)  or !user_signed_in? %>
       <%=link_to ' Go back', :back , class: 'fa fa-arrow-left'%> 
