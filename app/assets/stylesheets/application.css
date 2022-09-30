@@ -165,11 +165,17 @@ input[type="search"]:focus {
   justify-content: space-between;
   background-color: rgb(225, 140, 140);
   padding: 10px;
+  font-weight: bold;
 }
 .notification {
   background-color: var(--second-color);
   color: #f5f5f5;
 }
+#close-alert {
+  font-size: 17px;
+}
+
+
 
 /* styling forms */
 .form-control {
@@ -205,7 +211,6 @@ input::placeholder {
   border: none;
   padding-inline-start: 5px;
   text-transform: capitalize;
-  font-weight: 100;
 }
 .show-label {
   display: unset;
