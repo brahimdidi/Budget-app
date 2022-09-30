@@ -16,7 +16,7 @@ class GroupsController < ApplicationController
     @group = Group.new(group_params)
     @group.user = @user
     if @group.save
-      flash[:notice] = 'group was saved successfully'
+      flash[:notice] = "group #{@group.name} }was saved successfully"
       redirect_to user_groups_path(current_user)
     else
       flash.now[:notice] = 'Error:group could not be saved'

@@ -29,7 +29,7 @@ class ExpensesController < ApplicationController
     @group = Group.find(params[:group_id])
     @expense.groups << @group
     if @expense.save
-      flash[:notice] = 'expense was saved successfully'
+      flash[:notice] = "expense #{@expense.name} was saved successfully"
       redirect_to user_expenses_path(current_user)
     else
       flash.now[:notice] = 'Error:expense could not be saved'
