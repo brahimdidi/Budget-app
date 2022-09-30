@@ -1,8 +1,8 @@
 <%= form_with model: @expense, class: ''  do |form| %>
   <%= form.label :name %>
-  <%= form.text_field :name, class:'form-control', placeholder: 'name',:required => true ,autofocus: true %>
+  <%= form.text_field :name, class:'form-control', placeholder: 'name',:required => true ,autofocus: true, maxlength: 15 %>
   <%= form.label :amount %>
-  <%= form.number_field :amount, class:'form-control', placeholder: 'amount',:required => true %>
+  <%= form.number_field :amount, class:'form-control', placeholder: 'amount',oninput: "javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);",:required => true, maxlength: 5 %>
   <%= form.label "Select Group" %>
   <%= form.select :group_id, @groups.map { |group| [group.name, group.id] } %>
 <div class='actions'>
