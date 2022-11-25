@@ -1,0 +1,30 @@
+<% if resource.errors.any? %>
+  <div class= 'alert' id="error_explanation">
+  <div>
+    <h2>
+      <%= I18n.t("errors.messages.not_saved",
+                 count: resource.errors.count,
+                 resource: resource.class.model_name.human.downcase)
+       %>
+    </h2>
+    <ul>
+      <% resource.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+    </div>
+  <i class='fa fa-close' id='close-alert'></i>
+    <script>
+    // this function adds a close button to the alert
+    (function () {
+      let focused = document.querySelectorAll('.focused');
+      if(focused) focused[0].autofocus = false;
+      let closeAlert = document.getElementById('close-alert');
+      if (closeAlert)
+      closeAlert.addEventListener('click', () => {
+        closeAlert.parentElement.remove();
+      })
+    })();
+    </script>
+  </div>
+<% end %>

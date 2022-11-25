@@ -1,0 +1,299 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ 
+ /* main styles of the app */
+ :root {
+  --light: #f5f5f5;
+  --main-color:#3778c2;
+  --second-color:#5fb523;
+  --text-color: #434b54;
+}
+ * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  color: var(--text-color);
+ }
+ h2 {
+  padding: 2px;
+ }
+ h3 {
+  color: grey;
+  font-size: 22px;
+ }
+ .d-flex {
+  display: flex;
+ }
+ a, button, i, input[type=submit]{
+  cursor: pointer;
+  font-family: sans-serif;
+ }
+ a:hover, button:hover, i:hover, input[type=submit]:hover {
+  opacity: 0.6;
+ }
+ img {
+  max-width: 100px;
+  max-height: 150px;
+  padding: 5px;
+}
+.d-none {
+  display: none !important;
+}
+.container-all {
+  position: relative;
+  padding: 4px;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: var(--light);
+}
+ /* styling the header and navbar */
+header > a,.header-links > a{
+  text-transform: capitalize;
+  text-decoration: none;
+  color: white;
+}
+header {
+  position: sticky;
+  background-color: var(--main-color);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.header-links {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  padding: 3px;
+}
+.header-links > i {
+  color: white;
+  font-size: 20px;
+}
+/* styling the search diiv */
+.search-div {
+  color: #555;
+  display: flex;
+  padding: 2px;
+  border: 1px solid currentColor;
+  border-radius: 5px;
+  width: 90%;
+  background: var(--light);
+}
+.search-input {
+  border: none;
+  background: transparent;
+  margin: 0;
+  padding: 7px 8px;
+  font-size: 14px;
+  color: inherit;
+  border: 1px solid transparent;
+  border-radius: inherit;
+  width: 90%;
+}
+input[type="search"]::placeholder {
+  color: #bbb;
+}
+.search-div > button {
+  text-indent: -999px;
+  overflow: hidden;
+  width: 40px;
+  padding: 0;
+  margin: 0;
+  border: 1px solid transparent;
+  border-radius: inherit;
+  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
+  cursor: pointer;
+  opacity: 0.7;
+}
+button[type="submit"]:focus,
+input[type="search"]:focus {
+  box-shadow: 0 0 3px 0 #1183d6;
+  border-color: #1183d6;
+  outline: none;  
+}
+.search-div > button:hover{
+  opacity: 1;
+}
+
+.nav-ul > *  {
+  border-bottom: 0.5px solid white;
+  padding: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  color: #f5f5f5;
+  line-height: 100%;
+  font-size: 17px;
+  
+}
+.nav-ul > *:hover {
+  opacity: 1.6;
+  background: white;
+}
+
+.phone-nav-active {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  transform-origin: 0% 0%;
+  transform: translate(100%,0%);
+  transition: transform 0.2s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+.search-div {
+  transform-origin: 0% 0%;
+  transform: translate(100%,0%);
+  transition: transform 0.2s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+/* styling the alerts */
+.alert, .notification {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(225, 140, 140);
+  padding: 10px;
+  font-weight: bold;
+}
+.notification {
+  background-color: var(--second-color);
+  color: #f5f5f5;
+}
+#close-alert {
+  font-size: 17px;
+}
+
+
+/* styling forms */
+.form-control {
+  display: block;
+  width: 100%;
+}
+form {
+  background: #ffffff;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  padding: 10px;
+}
+form label {
+  display: none;
+}
+.remember-me{
+  margin-top: 10px;
+  border: none !important;
+}
+.field {
+  margin-left: 20px;
+  border-bottom: 1px solid black;
+
+}
+.field  > input {
+  background: none !important;
+  border: none !important;
+  border-bottom: 1px solid var(--text-color);
+}
+input::placeholder {
+  border: none;
+  padding-inline-start: 5px;
+  text-transform: capitalize;
+}
+.show-label {
+  display: unset;
+}
+
+/* styling devise links */
+.devise-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 10px;
+}
+.devise-links > * {
+  border: unset;
+  background: unset;
+}
+.actions {
+  text-align: center;
+  padding: 5px;
+  background: none;
+}
+
+/* styling the lists and its childs  */
+.list {
+  margin-top: 10px;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.list > li {
+  background-color: #ffffff;
+  padding: 5px;
+  width: 96%;
+}
+.list > li > div, .list > li > a {
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+.list > li > div > div, .list > li > a> div {
+  align-items: center;
+}
+.total-amount-div {
+  width: 100%;
+  background: white;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+}
+.date {
+  margin-bottom: unset;
+  text-align: center;
+}
+.button-primary {
+  margin-top: 10px;
+  width: 50%  ;
+}
+
+footer {
+  background-color: var(--second-color);
+  height: 100px;
+  padding: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 30px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+footer > a {
+  width: 90%;
+  font-size: 30px;
+  border: 1px solid white;
+  padding: 10px;
+  color: white;
+}
+footer > a:hover {
+  background: lightblue;
+  color: black;
+}
+

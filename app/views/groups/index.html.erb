@@ -1,0 +1,21 @@
+<section>
+<ul class= 'list d-flex'>
+  <% @groups.each do |group| %>
+    <li>
+      <% @link =  user_expense_path(current_user.id, group.id) %>
+      <a href = <%= @link %> class= 'd-flex'>
+        <div class='d-flex'>
+              <img src=<%= group.icon %> >
+              <p><%= group.name %></p>
+        </div>
+        
+          <h2>$<%=group.total_amount%></h2>
+      </a>
+      <p class= 'date'><%= group.created_at %></p>
+    </li> 
+  <%end%>
+</ul>
+<%@link = "/users/#{current_user.id}/groups/new"%>
+<%@data = {text: 'add new group', link: @link}%>
+</section>
+<%= render 'partials/footer', :data => :data %>
