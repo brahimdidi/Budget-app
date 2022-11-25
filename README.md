@@ -67,7 +67,7 @@ run rspec spec
 
 ## Authors
 
-👤 **Author**
+👤 **Brahim didi**
 
 - GitHub: [@brahimdidi](https://github.com/brahimdidi)
 - Twitter: [@brahimdidi](https://twitter.com/twitterhandle)
